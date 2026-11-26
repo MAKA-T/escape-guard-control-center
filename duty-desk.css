@@ -1,0 +1,109 @@
+.deskSectionTitle,.evidenceMeta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.deskSectionTitle{margin:4px 0 10px}
+.deskSectionTitle h2{margin:0;letter-spacing:-.035em}
+.deskSectionTitle>span{font-weight:700;font-size:13px;color:#595868;background:#f0eff4;border-radius:18px;min-width:28px;text-align:center;padding:4px 9px}
+.incidentRow{width:100%;display:grid;grid-template-columns:29px minmax(0,1fr) auto;gap:10px;align-items:center;border:0;border-top:1px solid #e4e2e8;border-radius:0;background:transparent;text-align:left;padding:14px 1px;color:#23222e;cursor:pointer}
+.incidentRow:hover,.incidentRow:focus-visible{background:#f4f3f6}
+.incidentGlyph{width:27px;height:27px;display:grid;place-items:center;border-radius:9px;background:#e9edf5;color:#395688;font-size:14px;font-weight:700}
+.incidentGlyph.attention{color:#8c410a;background:#f7e7dc}
+.incidentRow strong,.incidentRow small{display:block}
+.incidentRow strong{font-size:14px;letter-spacing:-.02em}.incidentRow small{margin-top:4px;font-size:11px;color:#625e6b}
+.incidentRow i{font-size:10px;color:#665d63;font-style:normal}
+.evidenceMeta{margin:5px 0 11px;font-size:11px;color:#605c67}.evidenceMeta b{color:#934822;background:#faece2;border-radius:20px;padding:3px 8px}
+.incidentEvidence{position:relative;display:block;width:100%;height:100px;border:0;overflow:hidden;border-radius:10px;background:#25252b;text-align:left;cursor:zoom-in}
+.incidentEvidence img{width:100%;height:100%;object-fit:cover;object-position:50% 47%;opacity:.85}
+.incidentEvidence span{position:absolute;bottom:8px;left:8px;padding:4px 7px;border-radius:4px;color:white;background:#202128d6;font-size:10px}
+.incidentNote{color:#4b4753;font-size:12px;line-height:1.45;margin:8px 0}
+.recipientRoster{padding:8px 0;margin:6px 0 8px;border-block:1px solid #e3e1e8;color:#514c59;font-size:12px}
+.recipientRoster summary{cursor:pointer}.recipientRoster summary b{margin-left:5px}
+.recipientRoster p{font-variant-numeric:tabular-nums;line-height:1.7;overflow-wrap:anywhere}
+.floorDispatch{border-top:1px solid #dedce4;margin-top:12px;padding-top:4px}
+.planNotes{margin:10px 0;padding:8px 0 8px 11px;border-inline-start:3px solid #7667a0;color:#494254;overflow-wrap:anywhere}
+.planNotes>strong{font-size:13px;line-height:1.4;color:#352e40}
+.planNotes p,.planNotes dl,.planNotes small{margin:4px 0 0;font-size:12px;line-height:1.45}
+.planNotes dl>div{display:flex;flex-wrap:wrap;gap:2px 8px;justify-content:space-between}.planNotes dt{color:#645f69}.planNotes dd{margin:0}
+.planNotes .planProfile,.planNotes .planAudience{display:block}
+.tile.wearing{background:#f6d8c6;border-color:#bc7745}
+#inspector .subBtn{margin-top:6px}
+#dutySection .desk-body{scrollbar-gutter:stable}
+.incidentGlyph .deskGlyph,.eventSourceGlyph .deskGlyph{display:block;width:20px;height:20px}
+.eg-live .eg-feed-row{grid-template-columns:20px minmax(0,1fr) max-content}
+.eventSourceGlyph{align-self:center;color:#575362}
+.eg-feed-row[data-alarm="true"] .eventSourceGlyph{color:#a24e25}
+
+/* The duty column can be 250px wide while the site itself is 1200px wide. */
+#dutySection{container:desk / inline-size;min-inline-size:0}
+#dutySection .desk-heading{flex-wrap:wrap}
+#dutySection #workspaceTabs{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;overflow:visible;
+  width:100%;max-width:100%;border-radius:13px;
+}
+#dutySection #workspaceTabs button{
+  display:flex;align-items:center;justify-content:flex-start;gap:6px;min-width:0;
+  min-height:33px;height:auto;padding:6px 8px;line-height:1.25;white-space:normal;
+  border-radius:10px;
+}
+#dutySection #workspaceTabs button svg{width:14px;height:14px;flex:0 0 14px}
+#dutySection #workspaceTabs button span{min-width:0;overflow-wrap:anywhere}
+@container desk (min-width:325px){
+  #dutySection #workspaceTabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+  #dutySection #workspaceTabs button{justify-content:center;padding-inline:3px;gap:4px}
+}
+#dutySection :is(.desk-body,.desk-activity,#inspector,#broadcastPanel,.ophead,.groupDetailHead>div,.groupRowTitle,.toolrow>span,.incidentRow>span,.eg-log-row,.eg-receipt-line>*,.receipt>*,.eg-confirm-scope>*,.eg-feed-row>span){min-width:0}
+#dutySection :is(h2,h3,.incidentRow strong,.incidentRow small,.incidentNote,.toolrow,.groupRowTitle,.groupHelp,.groupNotice,.eg-feed-row strong,.eg-feed-row small,.eg-log-row,.eg-confirm-scope,.opHelp,.opRouteHero,.opReceipt,#latestEvent>span,#latestEvent>small,#feedback,.scopeLine,.field,.groupConsent){overflow-wrap:anywhere}
+#dutySection :is(.incidentRow strong,.incidentRow small,.incidentRow i,.groupRowTitle strong,.groupRowTitle small){line-height:1.3}
+#dutySection #inspector :is(.ophead,.dataPair,.opRouteScope,.groupFacts,.evidenceMeta){flex-wrap:wrap}
+#dutySection #inspector :is(.groupBack,.subBtn,.opPrimary,.toolrow,.receipt){max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere}
+#dutySection #inspector :is(select,input:not([type="checkbox"]),textarea),#dutySection #broadcastPanel :is(select,textarea){min-width:0;max-width:100%;box-sizing:border-box}
+#dutySection .desk-body{scrollbar-gutter:auto}
+#dutySection #inspector :is(.groupType,.groupChevron,.groupState i){flex-shrink:0}
+#dutySection .incidentEvidence span{max-width:calc(100% - 16px);overflow-wrap:anywhere}
+#dutySection .desk-activity #latestEvent{grid-template-columns:minmax(0,1fr) max-content}
+
+.floorSignal{
+  container:floor-signal / inline-size;
+  color:#474453;
+  padding:8px 0 11px;
+}
+.floorSignal h3{font-size:13px;line-height:1.35;font-weight:650;margin:0 0 5px}
+.signalLegend{display:flex;gap:4px 12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.signalLegend span{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;line-height:1.4}
+.signalMark{display:block;flex:none;pointer-events:none}
+.signalMark.signalPending{width:10px;height:9px;background:#af5725;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.signalMark.signalVerified{width:8px;height:8px;background:#514f72;border-radius:1px}
+.signalMark.signalQuiet{width:8px;height:2px;background:#aaa8b1;border-radius:2px}
+.signalPlot{display:grid;grid-template-columns:max-content repeat(6,minmax(0,1fr));gap:1px 0;align-items:stretch;font-variant-numeric:tabular-nums}
+.signalPlot>*{grid-column:var(--small-col);grid-row:var(--small-row)}
+.signalTick{font-size:10px;line-height:1.45;text-align:center;color:#65616e}
+.signalTick.nextSignalBand{margin-top:7px}
+.signalTower{padding-right:7px;align-self:center;font-size:10.5px;line-height:1.25;font-weight:650}
+#dutySection .signalPlot button{
+  display:flex;align-items:center;justify-content:center;gap:2px;
+  min-width:0;width:auto;height:auto;min-height:27px;padding:0;
+  border:0;border-radius:0;color:inherit;background:#f2f1f4;
+  border-inline-end:1px solid #fff;cursor:pointer;
+}
+#dutySection .signalPlot [data-signal-state="pending"]{background:#faeadf}
+#dutySection .signalPlot [data-signal-state="verified"]{background:#e5e3ef}
+#dutySection .signalPlot [data-signal-state="mixed"]{background:#eee6e3}
+#dutySection .signalPlot button:hover{box-shadow:inset 0 0 0 1px #716b7a}
+#dutySection .signalPlot button[aria-pressed="true"]{box-shadow:inset 0 0 0 1.7px #393644}
+#dutySection .signalPlot button:focus-visible{outline:2px solid #2f567b;outline-offset:-3px}
+.signalScope{display:flex;align-items:center;justify-content:space-between;gap:5px 9px;flex-wrap:wrap;padding:6px 0;border-top:1px solid #e2dfe5}
+.signalScope strong{font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+#dutySection .signalScope button{border:0;background:none;color:#585260;text-decoration:underline;text-underline-offset:3px;min-height:28px;cursor:pointer;font-size:11.5px}
+@container floor-signal (min-width:325px){
+  .signalPlot{grid-template-columns:max-content repeat(12,minmax(0,1fr))}
+  .signalPlot>*{grid-column:var(--wide-col);grid-row:var(--wide-row)}
+  .signalPlot .signalTick{margin-top:0}
+  .signalRepeated{display:none}
+}
+@media (pointer:coarse){
+  #dutySection .signalPlot button{min-height:44px}
+  @container floor-signal (max-width:550px){
+    .signalPlot{grid-template-columns:max-content repeat(6,minmax(0,1fr))}
+    .signalPlot>*{grid-column:var(--small-col);grid-row:var(--small-row)}
+    .signalPlot .nextSignalBand{margin-top:7px}
+    .signalRepeated{display:block}
+  }
+}

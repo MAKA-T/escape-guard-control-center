@@ -1,0 +1,19 @@
+#resetScenario{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:32px;padding:5px 10px;background:#fff;border:1px solid #dcd9d5;border-radius:10px;color:#514e4d;font:600 12px/1.3 Helvetica,Arial,sans-serif;cursor:pointer}
+#resetScenario svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+#resetDialog{box-sizing:border-box;width:min(370px,calc(100vw - 32px));height:auto;max-height:90vh;border:1px solid #d8d4cf;border-radius:18px;background:#fff;color:#302e32;padding:24px;box-shadow:0 16px 60px #302e322b}
+#resetDialog::backdrop{background:#25232b66}
+#resetDialog form{display:block;position:static;margin:0}
+#resetDialog h2{margin:0 0 10px;font:600 21px/1.25 Helvetica,Arial,sans-serif}
+#resetDialog p{margin:0 0 22px;padding:0;color:#5b5656;font:400 14px/1.6 Helvetica,Arial,sans-serif}
+#resetDialog form>div{display:flex;gap:8px;justify-content:flex-end}
+#resetDialog button{position:static;display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;min-height:36px;padding:6px 14px;border-radius:9px;border:1px solid #dedad6;background:#fff;color:#454143;font:600 13px/1.3 Helvetica,Arial,sans-serif;cursor:pointer}
+#resetDialog #confirmReset{background:#353137;color:white;border-color:#353137}
+#previewNotice{display:flex;flex-wrap:wrap;align-items:center;gap:7px;min-height:34px;padding:3px 10px;margin:4px 0 6px;border-radius:8px;background:#efebf6;color:#493b63;font:500 12px/1.4 Helvetica,Arial,sans-serif}
+#previewNotice i{width:19px;border-top:2px dashed #76569d}
+#previewNotice button{margin-left:auto;border:0;background:transparent;color:#50415e;min-width:32px;min-height:30px;line-height:1;cursor:pointer;font-size:20px}
+#map [data-preview-anchor]{background:#f5f1fb!important;color:#493167!important;border-color:#aa98be!important}
+#transferExample{display:flex;align-items:center;text-align:start;min-height:30px;padding:4px 0;margin-top:5px;color:#554b65;border:0;border-radius:4px;background:transparent;font:600 12px/1.4 Helvetica,Arial,sans-serif;cursor:pointer}
+#transferExample:hover{text-decoration:underline}
+#transferExample::after{content:"›";padding-inline-start:8px}
+#previewNotice[hidden],#transferExample[hidden]{display:none}
+@media(max-width:520px){#resetScenario{gap:4px;padding:4px 7px;font-size:11px}#resetScenario svg{width:12px}.masthead .globalcontrols{flex-wrap:wrap;justify-content:flex-end}}

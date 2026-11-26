@@ -1,0 +1,37 @@
+.eg-live,.eg-broadcast{font:inherit;color:inherit;min-width:0}
+.eg-live header,.eg-broadcast .dispatch-title,.eg-feed-tools,.eg-scope-count,.eg-receipt-line{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.eg-live header{padding:0 0 8px}.eg-live h3,.eg-broadcast h3{margin:0;font:650 15px/1.16 Helvetica,Arial,"Microsoft JhengHei",sans-serif;letter-spacing:-.015em}
+.eg-monitor-light{width:7px;height:7px;border-radius:50%;background:#d5712e;box-shadow:0 0 0 3px #f7e4d5;display:inline-block;margin-right:8px;vertical-align:2px}
+.eg-feed-tools button,.eg-back,.eg-log-head{background:none;border:0;padding:3px;color:#615c53;font:600 11px/1.25 inherit;cursor:pointer}
+.eg-feed-tools button{font:600 11px/1.2 Arial,sans-serif}.eg-feed-tools button[aria-pressed=true]{color:#a8460c}
+.eg-stream{height:134px;overflow-y:auto;overscroll-behavior:contain;border-top:1px solid #e0ddd5;border-bottom:1px solid #e0ddd5;scrollbar-width:thin;scrollbar-color:#cfcac0 transparent}
+.eg-feed-row{display:grid;width:100%;grid-template-columns:5px minmax(0,1fr) auto;gap:7px;align-items:start;text-align:left;background:transparent;border:0;border-bottom:1px solid #eeeae2;padding:7px 1px 7px 3px;color:inherit;box-sizing:border-box}
+button.eg-feed-row{cursor:pointer}button.eg-feed-row:hover{background:#faf0e6}
+.eg-feed-row i{width:5px;height:5px;border-radius:50%;margin-top:4px;background:#9c9c90}
+.eg-feed-row[data-alarm=true] i{background:#ed863e;border-radius:1px}.eg-feed-row strong{display:block;font-size:11.5px;font-weight:640;line-height:1.15}
+.eg-feed-row small,.eg-feed-row time,.eg-scope-count small,.eg-publish-note,.eg-log-row small{font-size:10.5px;color:#706d62;line-height:1.35}
+.eg-feed-row time,.eg-receipt-line,.eg-scope-count{font-variant-numeric:tabular-nums}.eg-feed-row time{white-space:nowrap}
+.eg-broadcast fieldset{padding:0;margin:0;border:0;min-width:0}.eg-broadcast .eg-field{display:block;font-size:11.5px;font-weight:650;margin:11px 0 4px}
+.eg-broadcast select,.eg-broadcast textarea{width:100%;box-sizing:border-box;background:#fcfbf7;border:1px solid #d6d3ca;border-radius:4px;color:#282c28;font:inherit;font-size:12px;line-height:1.35;padding:7px 8px}
+.eg-broadcast textarea{resize:vertical;min-height:54px}.eg-broadcast select{min-height:33px}
+.eg-scope-count{border-top:1px solid #dedbd3;margin-top:10px;padding:9px 0 6px;font-size:12px}.eg-scope-count b{font-size:19px}
+.eg-main-action,.eg-secondary{width:100%;cursor:pointer;border:1px solid #c46829;border-radius:4px;background:#fd9b4f;color:#29261f;font-weight:650;font-size:12px;padding:8px 10px}
+.eg-main-action:disabled{opacity:.5;cursor:default}.eg-secondary{background:transparent;border-color:#d6d1c6}
+.eg-broadcast .eg-preview{background:#f7f3eb;border-left:3px solid #ee934b;border-radius:3px;padding:9px;margin:10px 0;overflow-wrap:anywhere;white-space:pre-wrap;font-size:12px;line-height:1.5}
+.eg-broadcast .eg-actions{display:flex;align-items:center;gap:6px}.eg-broadcast .eg-actions .eg-back{flex:0 0 auto}
+.eg-broadcast .eg-publish-note{margin:5px 0 0}.eg-broadcast .eg-history{border-top:1px solid #dfdcd2;margin-top:11px;padding-top:7px}
+.eg-log-head{font-size:11.5px;font-weight:650}.eg-log-row{border-top:1px solid #e4e1d9;padding:6px 0}
+.eg-receipt-line{font-size:11px;line-height:1.3}.eg-receipt-line b{font-weight:650}
+.eg-live :focus-visible,.eg-broadcast :focus-visible{outline:2px solid #a95b20;outline-offset:2px}
+.eg-live header,.eg-receipt-line{flex-wrap:wrap}
+.eg-live .eg-feed-tools{min-width:0;flex-wrap:wrap;justify-content:flex-start}
+.eg-live .eg-feed-row{grid-template-columns:20px minmax(0,1fr) max-content;align-items:start}
+.eg-live .eg-feed-row .eventSourceGlyph{display:flex;align-self:start}
+.eg-live .eg-feed-row .eventSourceGlyph svg{max-width:100%;height:20px;flex:none}
+.eg-live .eg-feed-row>span{min-width:0}
+.eg-live .eg-feed-row :is(strong,small){overflow-wrap:anywhere;line-height:1.35}
+.eg-live .eg-feed-row time{line-height:1.35}
+.eg-broadcast .eg-receipt-line{align-items:baseline;gap:3px 8px}
+.eg-broadcast .eg-log-row{overflow-wrap:anywhere}
+.eg-broadcast .eg-confirm-scope{flex-wrap:wrap;gap:4px 8px;line-height:1.35}
+.eg-broadcast .eg-actions .eg-main-action{width:auto;min-width:0;flex:1}

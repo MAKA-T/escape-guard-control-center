@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Escape Guard Control Center</title>
+<link rel="stylesheet" href="console.css"><link rel="stylesheet" href="live-ops.css"><link rel="stylesheet" href="operator-tools.css"><link rel="stylesheet" href="workspace.css"><link rel="stylesheet" href="evacuation-workspace.css"><link rel="stylesheet" href="control-room.css"><link rel="stylesheet" href="duty-desk.css"><link rel="stylesheet" href="map-overlays.css"></head><body class="workspace-v148 evacuation-workspace">
+<a href="#deskTitle" class="jump-desk" id="jumpDesk"></a>
+<header class="masthead"><div class="identity"><img class="shield" src="Escape-Guard-original-shield.png" alt=""><div class="brandtext"><b>Escape Guard</b><span id="consoleName"></span></div></div><div class="globalcontrols"><span id="sim" class="sim"></span><button type="button" id="resetScenario" aria-haspopup="dialog"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a7 7 0 1 1 0 4M3 3v5h5"/></svg><span>Reset scenario</span></button><button id="lang"></button></div></header>
+<main><div class="pagehead"><div><div class="site" id="site"></div><h1 id="headline"></h1></div>
+<section id="incidentBoard" aria-label="Estate totals">
+  <div data-metric="inside"><span></span><strong>–</strong></div>
+  <div data-metric="pending"><span></span><strong>–</strong></div>
+  <div data-metric="floors"><span></span><strong>–</strong></div>
+  <div class="fleet"><span id="fleetText"></span><strong id="fleetCount"></strong></div>
+</section></div>
+<section id="bulletin" aria-label="Incident bulletins" aria-roledescription="carousel">
+  <div class="bulletin-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13v-3l5-1 10-4v13L8 14l-5-1Zm4 1 2 5h3l-2-4M21 9v5"/></svg><b></b></div>
+  <div class="bulletin-track" aria-live="off"><div id="bulletinItem"><time></time><strong></strong><span></span></div></div>
+  <div class="bulletin-actions"><button type="button" id="jumpFireResponse" aria-controls="fireResponsePanel"></button><button type="button" id="bulletinPause"></button><button type="button" id="bulletinNext"></button></div>
+</section>
+<div class="control-frame">
+<nav class="control-rail" id="controlRail" aria-label="Workspace">
+  <button type="button" data-panel="overview" aria-pressed="true"><span class="rail-icon"><svg viewBox="0 0 24 24"><path d="m3.5 8.5 8.5-5 8.5 5-8.5 5zM3.5 12.3l8.5 5 8.5-5M3.5 16l8.5 5 8.5-5"/></svg></span><span></span></button>
+  <button type="button" data-panel="directory" aria-expanded="false" aria-controls="deviceDirectory"><span class="rail-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5h9v16M14 10h5v11M8 8h3M8 11h3M8 14h3M9 21v-3"/></svg></span><span></span></button>
+  <button type="button" data-panel="desk" aria-expanded="true" aria-controls="dutySection"><span class="rail-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8m-4-4v4M6 10h3l2-3 2 6 2-3h3"/></svg></span><span></span></button>
+  <button type="button" data-panel="log" aria-expanded="false" aria-controls="liveFeed"><span class="rail-icon"><svg viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6m2-3v5l3 2"/></svg></span><span></span></button>
+</nav>
+<div class="workspace" data-directory="closed" data-desk="open">
+<aside class="directory" id="deviceDirectory" hidden>
+  <div class="floor-heading"><h2 id="floorTitle"></h2><button type="button" class="close-directory" id="closeDirectory" aria-label="Close">×</button></div>
+  <div id="towers"></div><div id="floors"></div>
+  <div class="listhead"><h2 id="terminalTitle"></h2><span id="listSum"></span></div>
+  <div id="scopechoice"></div><div id="terminals"></div><div id="statuskey"></div>
+  <div class="unitpane"><div id="unitdetail"></div><button type="button" id="toggleDevice" aria-expanded="false" aria-controls="deviceMore"></button></div>
+  <div id="deviceMore" hidden><div class="maskDisplay" id="maskDisplay"></div><button id="cameraThumb" class="cameraThumb"></button></div>
+</aside>
+<section class="planarea">
+  <div class="planheader"><div><span id="mapKicker"></span><h2 id="mapTitle"></h2></div><span id="floorNumber" hidden></span>
+    <nav id="sceneNav" aria-label="3D view"><div class="scene-switch">
+      <button type="button" data-camera-scope="estate" aria-pressed="true"></button>
+      <button type="button" data-camera-scope="floor" aria-pressed="false"></button></div>
+      <div id="sectionLocation" hidden><select id="sceneTower" aria-label="Tower"></select><select id="sceneFloor" aria-label="Floor"></select></div>
+    </nav>
+  </div>
+  <div id="previewNotice" hidden role="status"><i aria-hidden="true"></i><b></b><span></span><button id="closePlanPreview" type="button">×</button></div>
+  <div id="map"></div><div class="mapfoot"><span id="legend"></span><span id="mapNote"></span></div>
+  <section id="guidancePanel" aria-labelledby="guidanceHeading">
+    <div class="guidance-heading"><div><h3 id="guidanceHeading"></h3><span id="guidanceTotal"></span></div>
+      <select id="guidanceScope" aria-label="Population scope"></select></div>
+    <div id="guidanceBar" aria-hidden="true"><i data-band="auto"></i><i data-band="manual"></i><i data-band="pending"></i></div>
+    <div id="evacSummary" role="group" aria-label="Filter people and routes"></div>
+    <button type="button" id="transferExample" hidden></button>
+  </section>
+  <div id="routeSelection" hidden><div><strong id="routeFocusTitle"></strong><select id="routeGroup" hidden></select><span id="routeFocusDetail" role="status" aria-live="polite"></span><a id="guidedExample" hidden href="?example=guided"></a></div><button id="clearRouteFocus" type="button"></button></div>
+  <div id="counts" class="counts"></div>
+</section>
+<aside class="detail" id="dutySection">
+  <div class="desk-heading"><h2 class="deskTitle" id="deskTitle" tabindex="-1"></h2><button type="button" id="toggleActivity" aria-expanded="false" aria-controls="liveFeed"></button></div>
+  <div class="workspaceTabs" id="workspaceTabs" role="group"></div>
+  <div class="desk-body"><div id="inspector"></div><div id="broadcastPanel" hidden></div><div id="feedback" role="status" aria-live="polite"></div></div>
+  <div class="desk-activity"><button type="button" id="latestEvent" aria-controls="liveFeed" aria-expanded="false"></button><div id="liveFeed" hidden></div></div>
+  <section id="fireResponsePanel"></section>
+</aside></div></div></main><dialog id="cameraModal"><form method="dialog"><button id="closeCamera" aria-label="Close">×</button></form><img id="cameraFull" alt=""><h3 id="cameraHeading"></h3><p id="cameraCaption"></p></dialog>
+<dialog id="resetDialog" aria-labelledby="resetTitle" aria-describedby="resetBody"><form method="dialog"><h2 id="resetTitle"></h2><p id="resetBody"></p><p id="resetError" hidden role="alert"></p><div><button id="cancelReset" autofocus></button><button type="button" id="confirmReset"></button></div></form></dialog>
+<link rel="stylesheet" href="scenario-controls.css"><link rel="stylesheet" href="incident-board.css"><link rel="stylesheet" href="fire-response.css"><script src="vendor/three.min.js"></script><script src="tools-planner.js"></script><script src="building-layout.js"></script><script src="evacuation-scenario.js"></script><script src="route-guard.js"></script><script src="hazard-volume.js"></script><script src="flow-view.js"></script><script src="plan-preview.js"></script><script src="architecture.js"></script><script src="web3d.js"></script><script src="live-ops.js"></script><script src="console.js"></script><script src="operations-ui.js"></script><script src="workspace.js"></script><script src="fire-response.js"></script><script src="incident-board.js"></script></body></html>
